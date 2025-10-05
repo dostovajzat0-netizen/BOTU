@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOTU</title>
+<body>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</body>
+</html>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('star.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      
+    }
+
+    model-viewer {
+      position: absolute;
+      top: 50%;
+      left: 20%;         /* прижать к левому краю */
+      transform: translateY(-50%); /* центрировать по вертикали */
+      width: 800px;    /* ширина модели */
+      height: 800px;   /* высота модели */
+      z-index: -1;
+      transform: translate(-1%,-10%);
+      
+    }
+
+
+    /* Навигация */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 30px;
+      margin: 20px auto 10px auto;
+      width: fit-content;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: rgb(96, 104, 190);
+    }
+
+    .about-section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5); /* затемнение под текст */
+      border-radius: 15px;
+    }
+
+    .about-section h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    
+    
+  </style>
+</head>
+<body>
+  <model-viewer id="earth" src="./earthmapa.glb" auto-rotate auto-rotate-delay="1500" rotation-per-second="20deg" interaction-prompt="none" ></model-viewer>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <!-- Сначала меню -->
+  <nav>
+    <a href="about.html">About us</a>
+    <a href="index.html">Main Menu</a>
+    <a href="projects.html">Projects</a>
+    
+  </nav>
+
+  <!-- Под меню заголовок -->
+  <div class="about-section">
+    <h1>ABOUT US</h1>
+    <p>
+      B.O.T.U (Balance of the Universe).We are a team of five students from the Pavlodar College of Information Technology (CIT).
+      We are exploring the interest in web programming and its growing popularity in the field of modern digital technologies.
+    </p>
+    <p>
+      Each of us contributes to the team: some are stronger in design, some in interface development, and some in server-side development. 
+      Together, we form a team capable of solving problems comprehensively and finding innovative solutions.
+    </p>
+    <p>
+     Our goals extend beyond academic assignments. We strive to create projects that are useful, convenient, and engaging for people.
+     We view every idea as an opportunity to apply knowledge in practice and turn it into a real product.
+    </p>
+    <p>
+      We are confident that by combining our efforts, creativity, 
+      and professional skills, we can contribute to the development of web technologies and leave our mark on the digital future.
+    </p>
+  </div>
+</body>
+</html>

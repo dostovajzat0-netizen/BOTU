@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BOTU</title>
+<body>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+    
+</body>
+</html>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('star.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    model-viewer {
+      position: absolute;
+      top: 50%;
+      left: -285px;         /* прижать к левому краю */
+      transform: translateY(-50%); /* центрировать по вертикали */
+      width: 800px;    /* ширина модели */
+      height: 800px;   /* высота модели */
+      z-index: 0;
+      overflow: hidden;
+      
+      
+    }
+
+
+    /* Навигация */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 30px;
+      margin: 20px auto 10px auto;
+      width: fit-content;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: rgb(96, 104, 190);
+    }
+
+    /* Заголовок */
+    h1 {
+      margin-top: 30px;
+      font-size: 350px;
+      font-family:"Jersey 20", sans-serif;
+      background: linear-gradient(rgb(96, 104, 190),white);
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 3px 3px 5px rgb(255, 255, 255);
+      padding: 90px 640px;
+    }
+
+    .circle {
+      position: fixed;   /* фиксируем, не мешает тексту */
+      top: 50px;
+      left: -20px;
+      width: 250px;
+      height: 420px;
+      border-radius: 50%;
+      background: blue;
+      box-shadow: 0 0 60px 75px rgba(0, 150, 255, 0.6); /* сияние */
+      z-index: -1;
+      padding: 100px;
+      overflow: hidden;
+
+    }
+  </style>
+</head>
+<body>
+  <model-viewer id="earth" src="./earthmapa.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="20deg" interaction-prompt="none" ></model-viewer>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <!-- Сначала меню -->
+  <nav>
+    <a href="about.html">About us</a>
+    <a href="index.html">Main Menu</a>
+    <a href="projects.html">Project</a>
+    
+  </nav>
+  
+  <div class="circle"></div>
+
+  <!-- Под меню заголовок -->
+  <h1>BOTU</h1>
+</body>
+</html>

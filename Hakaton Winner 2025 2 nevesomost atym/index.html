@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NASA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: arial, sans-serif;
+      color: white;
+      text-align: center;
+      background: #000; /* запасной цвет */
+    }
+
+    /* Блок с космосом */
+    #space-area {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* фиксированная высота */
+      background: url('./nbl.webp') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden; /* ограничиваем астронавта */
+    }
+
+    model-viewer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      z-index: 2;
+    }
+
+    /* Продолжение сайта */
+    #content {
+      background: #f5f5f5;
+      color: #000;
+      padding: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Зона с астронавтом -->
+  <div id="space-area">
+    <model-viewer id="astronaut" src="./astronaut.glb" auto-rotate auto-rotate-delay="0" rotation-per-second="20deg" camera-controls interaction-prompt="none"></model-viewer>
+  </div>
+
+  <!-- Продолжение сайта -->
+  <div id="content">
+    <h2>NBL NASA (Neutral Buoyancy Laboratory)</h2>
+⸻
+    <p>
+
+     The laboratory is a huge pool where astronauts learn to work in conditions as close to zero gravity as possible.
+
+     Benefits for the World
+
+     Medicine:
+
+     Underwater training has led to new methods for rehabilitation after strokes and injuries, such as hydrotherapy and therapeutic pools.
+
+     Research on underwater breathing is used in the development of equipment for patients with lung diseases.
+
+     Rescue Technologies:
+     Skills developed in challenging underwater environments help train rescue teams — for example, in flooded mines or during underwater emergencies.
+
+     Robotics and Prosthetics:
+     Technologies created for underwater and zero-gravity operations have become the foundation for exoskeletons, prosthetics, and medical devices that help people walk again.
+
+     Science and Education:
+     The NBL serves as a research base for engineers, biomechanical experts, and students. It inspires new generations of scientists and medical professionals.
+
+     Ocean Technologies:
+     NASA’s experience with underwater training supports the development of safer equipment for deep-sea diving and ocean exploration on Earth.
+
+     Key Takeaway
+
+     The NBL is a clear example of how space training directly improves life on Earth — advancing medicine, rescue technologies, and education.
+    </p>
+    <a href="../projects.html" class="btn">Back</a>
+  </div>
+
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+  <script>
+    const astronaut = document.getElementById("astronaut");
+    const area = document.getElementById("space-area");
+
+    let x = 100, y = 100;
+    let dx = 3, dy = 3;
+
+    function moveAstronaut() {
+      const maxX = area.clientWidth - astronaut.clientWidth;
+      const maxY = area.clientHeight - astronaut.clientHeight;
+
+      x += dx;
+      y += dy;
+
+      if (x <= 0 || x >= maxX) dx *= -1;
+      if (y <= 0 || y >= maxY) dy *= -1;
+
+      astronaut.style.left = x + "px";
+      astronaut.style.top = y + "px";
+
+      requestAnimationFrame(moveAstronaut);
+    }
+
+    moveAstronaut();
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Купол ISS</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+
+    /* Верхняя часть с куполом */
+    .cupol {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* высота экрана */
+      overflow: hidden;
+    }
+
+    #space-area {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: url("space_bg.jpg") center/cover no-repeat; /* фон космоса */
+    }
+
+    /* Земля */
+    #earth {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      z-index: 1;
+    }
+
+    /* Рамка купола */
+    .frame {
+      position: absolute;
+      top: 0;
+      left: -80px;
+      width: 105%;
+      height: 120%;
+      object-fit: cover;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Продолжение сайта */
+    .content {
+      background: #f5f5f5;
+      color: #000;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .content p {
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.6;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Купол -->
+  <div class="cupol">
+    <div id="space-area">
+      <!-- Земля -->
+      <model-viewer id="earth" src="./earthmapa.glb"  auto-rotate auto-rotate-delay="0" auto-rotate rotation-per-second="20deg" interaction-prompt="none"></model-viewer>
+    </div>
+    <!-- Рамка иллюминатора -->
+    <img src="okno_kupola_bez_stek.png" class="frame">
+  </div>
+
+  <!-- Продолжение сайта -->
+  <div class="content">
+     <h2>The ISS Dome (Window to the World)</h2>
+⸻
+     <p>
+        The dome is not just a viewing window, but a unique instrument that is of value to the entire Earth.
+
+        Benefits for the World
+
+        Environment and Climate:
+        Astronauts in the Cupola take thousands of photographs of Earth's surface. These images help scientists monitor climate change, melting glaciers, deforestation, ocean pollution, and the atmosphere.
+
+        Natural Disasters:
+        Images from the Cupola enable quicker detection of wildfires, floods, and hurricanes, allowing emergency services on Earth to respond more rapidly and save lives.
+
+        Uniting Humanity:
+        Viewing the planet without borders fosters a sense of a shared home among people. This perspective encourages cooperation over conflict and promotes thinking oriented toward the planet’s future.
+
+        Science and Art:
+        Earth imagery from the Cupola has inspired artists, writers, environmentalists, and researchers. It helps people feel a deeper connection to both space and Earth.
+     </p>
+     <a href="../projects.html" class="btn">Back</a>
+  </div>
+
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</body>
+</html>
